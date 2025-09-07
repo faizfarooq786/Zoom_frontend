@@ -1,12 +1,23 @@
-# React + Vite
+# Zoom_frontend (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal React + Vite frontend for a WebRTC/Socket.IO video-calling app.
 
-Currently, two official plugins are available:
+## Scripts
+npm install
+npm run dev        # local dev (default: http://localhost:5173)
+npm run build      # creates production build in /dist
+npm run preview    # serve built files locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Env (Vite)
+Create `.env` and set:
+VITE_API_URL=https://<your-backend>.onrender.com
+VITE_SOCKET_URL=wss://<your-backend>.onrender.com  # if using Socket.IO/WebSocket
 
-## Expanding the ESLint configuration
+## Deploy (Render Static Site)
+- Build Command: `npm ci && npm run build`
+- Publish Directory: `dist`
+- Redirects/Rewrites: `/* -> /index.html` (Rewrite)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech
+- React, Vite, (optionally) Socket.IO client / WebRTC
+
